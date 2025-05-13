@@ -1,0 +1,43 @@
+﻿@model List<Portfolio.Models.Product>
+
+<h2>Ürün Listesi</h2>
+
+<table class="product-table">
+    <thead>
+        <tr>
+            <th>Ürün ID</th>
+            <th>Ürün Adı</th>
+            <th>Miktar</th>
+            <th>Yılı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.ProductName</td>
+                <td>@product.Quantity</td>
+                <td>@product.Year</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .product-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .product-table th, .product-table td {
+            border: 1px solid black; /* Çizgili grid */
+            padding: 10px;
+            text-align: left;
+        }
+
+        .product-table th {
+            background-color: #f2f2f2; /* Başlık için gri arka plan */
+        }
+</style>

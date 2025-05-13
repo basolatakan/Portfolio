@@ -1,0 +1,66 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Portfolio.Models.Inversors.DomesticInvestors;
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 rounded" style="width: 400px;">
+        <h2 class="text-center mb-4">Sign Up</h2>
+
+        <form asp-action="DomesticInvestorsRegister" method="post">
+            <div class="form-group mb-3">
+                <label asp-for="FirstName" class="form-label fw-bold"></label>
+                <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="LastName" class="form-label fw-bold"></label>
+                <input asp-for="LastName" class="form-control" placeholder="Enter your last name" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label fw-bold"></label>
+                <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Phone" class="form-label fw-bold"></label>
+                <input asp-for="Phone" type="tel" class="form-control" placeholder="Enter your phone" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Amount" class="form-label fw-bold"></label>
+                <input asp-for="Amount" type="text" class="form-control" placeholder="Enter your amount" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Adress" class="form-label fw-bold"></label>
+                <input asp-for="Adress" type="text" class="form-control" placeholder="Enter your adress" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="IdNumber" class="form-label fw-bold"></label>
+                <input asp-for="IdNumber" type="text" class="form-control" placeholder="Enter your id number" />
+                <span asp-validation-for="IdNumber" class="text-danger"></span>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Create Domestic Investor</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-3">
+            <small>Already have an account? <a asp-action="Login" class="text-primary">Domestic Investor</a></small>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

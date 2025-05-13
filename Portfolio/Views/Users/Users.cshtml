@@ -1,0 +1,24 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TageHelpers
+@model Users
+
+<script src="c:\users\asus\onedrive\desktop\portfolio\portfolio\wwwroot\jquery\jquery.min.js"></script>
+
+<script src="c:\users\asus\onedrive\desktop\portfolio\portfolio\wwwroot\jquery-validate\additional-methods.min.js"></script>
+
+<script src="c:\users\asus\onedrive\desktop\portfolio\portfolio\wwwroot\jquery-validate\jquery.validate.min.js"></script>
+
+<div asp-validation-summary="All">
+
+</div>
+
+<form asp-action="Users" asp-controller="Users" method="post">
+    <input type="email" asp-for="Email" placeholder="Email" />
+    <span asp-validation-for="Email"></span> <br />
+
+    <input type="text" asp-for="Password" placeholder="Password" /> 
+    <span asp-validation-for="Password"></span> <br />
+    
+    <input type="text" asp-for="IdNumber" placeholder="IdNumber" /> 
+    <span asp-validation-for="IdNumber"></span> <br />
+    <button>Gönder</button>
+</form>

@@ -1,0 +1,45 @@
+﻿@model List<Employees>
+
+<h2>Çalışan Listesi</h2>
+
+<table class="employees-table">
+    <thead>
+        <tr>
+            <th>Çalışan Numarası</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Yaşı</th>
+            <th>Adresi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employees in Model)
+        {
+            <tr>
+                <td>@employees.Id</td>
+                <td>@employees.FirstName</td>
+                <td>@employees.LastName</td>
+                <td>@employees.Age</td>
+                <td>@employees.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .employees-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .employees-table th, .employees-table td {
+        border: 1px solid black; /* Çizgili grid */
+        padding: 10px;
+        text-align: left;
+    }
+
+    .employees-table th {
+        background-color: #f2f2f2; /* Başlık için gri arka plan */
+    }
+</style>

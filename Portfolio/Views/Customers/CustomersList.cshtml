@@ -1,0 +1,45 @@
+﻿@model List<Portfolio.Models.Customers>
+
+<h2>Müşteri Listesi</h2>
+
+<table class="customers-table">
+    <thead>
+        <tr>
+            <th>Müşteri Numarası</th>
+            <th>Müşteri Adı</th>
+            <th>Müşteri Soyadı</th>
+            <th>Müşteri Yaşı</th>
+            <th>Müşteri Telefon Numarası</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customers in Model)
+        {
+            <tr>
+                <td>@customers.Id</td>
+                <td>@customers.FirstName</td>
+                <td>@customers.LastName</td>
+                <td>@customers.Age</td>
+                <td>@customers.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .customers-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .customers-table th, .customers-table td {
+            border: 1px solid black; /* Çizgili grid */
+            padding: 10px;
+            text-align: left;
+        }
+
+        .customers-table th {
+            background-color: #f2f2f2; /* Başlık için gri arka plan */
+        }
+</style>

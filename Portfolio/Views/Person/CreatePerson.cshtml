@@ -1,0 +1,19 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TageHelpers
+@model Person
+
+<form asp-action="CreatePerson" asp-controller="Person" method="post">
+    <input type="text" asp-for="Email" placeholder="Emailinizi girin"/>
+    <br />
+    <input type="text" asp-for="Password" placeholder="Şifrenizi girin" />
+    <br />
+    <button>Kişi Ekle</button>
+    <br />
+
+</form>
+
+@if (Model != null)
+{
+    <h3>Girilen Bilgiler:</h3>
+    <p>Email: @Model.Email</p>
+    <p>Şifre: @Model.Password</p>
+}
